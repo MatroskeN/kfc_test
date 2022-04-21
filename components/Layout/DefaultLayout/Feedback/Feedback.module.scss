@@ -1,0 +1,118 @@
+.root{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+  .chat{
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    right: 13px;
+    width: 333px;
+    height: 547px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.13);
+    border-radius: 2px;
+    z-index: 10;
+    padding: 0 13px;
+    .xclose{
+      position: absolute;
+      top: 15px;
+      right: 14px;
+      z-index: 5;
+      cursor: pointer;
+    }
+    .chatHeader{
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 2px;
+    }
+    .messenger{
+      margin-top: 117px;
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      margin-bottom: 30px;
+      .message{
+        font-family: TT Norms;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: #000000;
+        padding: 9px 11px 12px 17px;
+        width: fit-content;
+        max-width: 225px;
+        margin-bottom: 24px;
+      }
+      .botMessage{
+        background: #F6F6F6;
+        border-radius: 0px 20px 20px 20px;
+      }
+      .userMessage{
+        border-radius: 20px 0px 20px 20px;
+        background: rgba(228, 0, 43, 0.1);
+        margin-left: auto;
+      }
+    }
+    .controls{
+      display: flex;
+      flex-direction: column;
+      button{
+        background: #E3032C;
+        margin-bottom: 4px;
+        padding: 6px 15px;
+        font-family: Cera Condensed Pro;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 23px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        &:last-child{
+          margin-bottom: 10px;
+        }
+      }
+    }
+    input{
+      background: #F6F6F6;
+      width: 100%;
+      padding: 5px 9px 13px 9px;
+      font-family: TT Norms;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 30px;
+      color: #000000;
+      border: none;
+      outline: none;
+      &::placeholder{
+        color: #9E9E9E;
+      }
+    }
+    .send{
+      display: flex;
+      margin-left: auto;
+      margin-top: 10px;
+      p{
+        margin: 0;
+        padding-right: 10px;
+        font-family: Cera Condensed Pro;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 23px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+      }
+    }
+  }
+  .chatActive{
+    display: flex;
+    flex-direction: column;
+  }
+}

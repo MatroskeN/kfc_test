@@ -1,0 +1,262 @@
+.root{
+  display: flex;
+  width: 100%;
+  .itemTitle{
+    font-family: Cera Condensed Pro;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 28px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 20px;
+  }
+  .checkList{
+    width: 514px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .checkList__header{
+      width: 514px;
+      height: 45px;
+      background: #000000;
+      display:flex;
+      align-items:center;
+      justify-content:space-around;
+      margin-bottom: 3px;
+      .headerItem{
+        font-family: TT Norms;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 13px;
+        text-align: center;
+        color: #FFFFFF;
+      }
+    }
+  }
+  .balance{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 258px;
+    margin-left: 2px;
+    .leftover{
+      width: 256px;
+      height: 231px;
+      background: #FFFFFF;
+      box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15);
+      border-radius: 2px;
+      margin-bottom: 12px;
+      .leftoverHeader{
+        border-bottom: 1px dashed #000000;
+        height: 74px;
+        display: flex;
+        padding-bottom: 14px;
+        align-items: flex-end;
+        margin-bottom: 22px;
+        .mobTitle{
+          display: none;
+        }
+        span{
+          margin-left: 10px;
+          margin-right: 7px;
+          font-family: TT Norms;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 40px;
+          line-height: 47px;
+          color: #E4002B;
+        }
+        font-family: Cera Condensed Pro;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 30px;
+
+        color: #000000;
+      }
+      .leftoverContent{
+        font-family: TT Norms;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 18px;
+        color: #000000;
+        padding: 0 11px 28px 11px;
+      }
+    }
+  }
+  .checkModal{
+    display: block;
+    .filter {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(118, 118, 118, 0.15);
+      backdrop-filter: blur(8px);
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .modal{
+        width: 333px;
+        height: auto;
+        background: #FFFFFF;
+        box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.1);
+        border-radius: 2px;
+        position: relative;
+        padding: 45px 16px 30px;
+        .xclose{
+          position: absolute;
+          top: 15px;
+          right: 14px;
+          cursor: pointer;
+        }
+        .modalTitle{
+          font-family: Cera Condensed Pro;
+          font-style: normal;
+          font-weight: 900;
+          font-size: 24px;
+          line-height: 26px;
+          text-align: center;
+          text-transform: uppercase;
+          color: #000000;
+          margin-bottom: 23px;
+        }
+        .instructions{
+          font-family: TT Norms;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 13px;
+          line-height: 16px;
+          color: #000000;
+          margin-top: 18px;
+          margin-bottom: 20px;
+        }
+        .upload{
+          width: 307px;
+          height: 133px;
+          position: relative;
+          margin-bottom: 25px;
+          input{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 1;
+            cursor: pointer;
+          }
+          .mask{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 0;
+            border: 1px dashed #9E9E9E;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            svg{
+              margin-top: 30px;
+              margin-bottom: 9px;
+            }
+            p{
+              margin: 0;
+              font-family: Cera Condensed Pro;
+              font-style: normal;
+              font-weight: 900;
+              font-size: 14px;
+              line-height: 30px;
+              text-align: center;
+              text-transform: uppercase;
+              color: #000000;
+            }
+          }
+        }
+        .modalBtn__block{
+          display: flex;
+          justify-content: space-between;
+          button{
+            max-width: 137px;
+            margin: 0;
+            padding: 10px 18px 15px;
+            p{
+              font-size: 14px;
+            }
+            &:last-child{
+              padding: 10px 30px 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .none{
+    display: none;
+  }
+}
+
+@media(max-width:900px){
+  .root{
+    flex-direction: column-reverse;
+    .balance{
+      max-width: 334px;
+      margin: 0 auto;
+      .itemTitle{
+        display: none;
+      }
+      .leftover{
+        width: 334px;
+        height: auto;
+        margin-bottom: 17px;
+        .leftoverHeader{
+          flex-direction: column;
+          align-items: flex-start;
+          height: 83px;
+          font-size: 20px;
+          line-height: 25px;
+          margin-bottom: 0;
+          .mobTitle{
+            display: block;
+            padding: 12px 0 5px 9px;
+            font-family: Cera Condensed Pro;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 20px;
+            line-height: 25px;
+            text-transform: uppercase;
+            color: #000000;
+          }
+          span{
+            font-size: 30px;
+            line-height: 35px;
+          }
+        }
+        .leftoverContent{
+          font-size: 12px;
+          line-height: 14px;
+          padding: 12px 11px;
+        }
+      }
+    }
+    .checkList{
+      width: 100%;
+      margin-top: 35px;
+      .itemTitle{
+        font-size: 24px;
+        line-height: 26px;
+      }
+      .checkList__header{
+        width: 100%;
+        .headerItem{
+          font-size: 13px;
+          line-height: 13px;
+        }
+      }
+    }
+  }
+}

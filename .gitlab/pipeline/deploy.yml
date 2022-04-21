@@ -1,0 +1,34 @@
+.deploy:
+  stage: deploy
+  image: $DOCKER_IMAGE
+  interruptible: true
+  environment:
+    name: $ENV
+    url: $DOMAIN
+  before_script:
+    - apk update && apk add openssh-client rsync
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan $DEV_SERVER >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" >> ~/.ssh/config'
+  script:
+    - ssh root@$DEV_SERVER date
+    - rsync -av --exclude-from='.gitlab/rsync_exclude.txt' ./out/ root@$DEV_SERVER:$FOLDER_PATH --delete
+
+deploy preview:
+  extends: .deploy
+  only:
+    refs:
+      - branches
+  variables:
+    ENV: development
+    DEV_SERVER: $HOST_SERVER_DEV
+    FOLDER_PATH: $FOLDER_PATH_DEV
+    DOMAIN: $DOMAIN_DEV
+  dependencies:
+    - build preview
+  needs:
+    - build preview

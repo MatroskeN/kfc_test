@@ -1,0 +1,57 @@
+.root{
+  padding: 17px 27px 14px 40px;
+  max-width: 772px;
+  width: 100%;
+  background: #F6F6F6;
+  margin-bottom: 9px;
+  &:last-child{
+    margin-bottom: unset;
+  }
+  .top{
+    display: flex;
+    align-items: center;
+    .number{
+      font-family: TT Norms;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 28px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #E4002B;
+      margin-right: 15px;
+    }
+    .title{
+      font-family: Cera Condensed Pro;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 22px;
+      line-height: 26px;
+      color: #000000;
+    }
+    button{
+      margin-left: auto;
+      transition: all 0.4s;
+    }
+  }
+  .bottom{
+    display: none;
+    margin-top: 14px;
+    font-family: TT Norms;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+  }
+}
+.activeRoot{
+  .bottom{
+    display: block;
+  }
+  .top{
+    button{
+      transform: rotateZ(180deg);
+    }
+  }
+}

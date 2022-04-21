@@ -1,0 +1,15 @@
+.root{
+  background: url("../../../../public/images/main/bg.png") no-repeat;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  .feedback{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+

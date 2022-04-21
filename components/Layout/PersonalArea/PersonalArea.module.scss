@@ -1,0 +1,58 @@
+.root{
+  padding-top: 74px;
+  .content{
+    max-width: 772px;
+    width: 100%;
+    margin: 0 auto;
+
+    .title{
+      font-family: Cera Condensed Pro;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 64px;
+      line-height: 46px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #000000;
+      margin-bottom: 104px;
+      span{
+        color: #E4002B;
+      }
+    }
+
+  }
+  .rules{
+    max-width: 848px;
+    width: 100%;
+    margin: 0 auto;
+    font-family: TT Norms;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #000000;
+    padding-bottom: 50px;
+  }
+}
+
+@media(max-width: 900px){
+  .root{
+    padding-top: 137px;
+    max-width: 100%;
+    .content{
+      .title{
+        font-size: 34px;
+        line-height: 43px;
+        margin-bottom: 9px;
+      }
+    }
+    .rules{
+      font-size: 12px;
+      line-height: 14px;
+      text-align: left;
+      padding: 0 15px 0 20px;
+      margin-bottom: 100px;
+    }
+  }
+}

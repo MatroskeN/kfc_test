@@ -1,0 +1,821 @@
+.root{
+  width: 100%;
+  margin: 0 auto;
+  .title{
+    max-width: 764px;
+    margin: 60px auto 27px;
+    font-family: Cera Condensed Pro;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 46px;
+    text-transform: uppercase;
+    color: #E4002B;
+  }
+  .subtitle{
+    max-width: 764px;
+    margin: 0 auto;
+    p{
+      max-width: 441px;
+      font-family: TT Norms;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 26px;
+      color: #000000;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .btnBlock{
+    max-width: 764px;
+    margin: 40px auto 0;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+    &:first-child{
+      margin-top: 30px;
+    }
+    button{
+      margin: 0;
+    }
+  }
+
+  .video{
+    margin-top: 95px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+    .background{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #E4002B;
+      transform: matrix(1, -0.27, 0, 0.97, 0, 0);
+    }
+    .videoTitle{
+      margin-top: 40px;
+      position: relative;
+      font-family: Cera Condensed Pro;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 36px;
+      line-height: 28px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      margin-bottom: 32px;
+    }
+    video{
+      position: relative;
+    }
+  }
+
+  .modal{
+    display: none;
+  }
+  .activeModal{
+    display: block;
+  }
+  .filter {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(118, 118, 118, 0.15);
+    backdrop-filter: blur(8px);
+    z-index: 15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+
+    .none {
+      display: none;
+    }
+
+    .mainWindow {
+      display: block;
+      width: 333px;
+      height: auto;
+      margin-top: 120px;
+      background: #FFFFFF;
+      box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.1);
+      border-radius: 2px;
+      position: relative;
+      padding: 46px 13px 11px 13px;
+
+      .modalBtn {
+        margin-bottom: 14px;
+
+        &:last-child {
+          margin-bottom: unset;
+        }
+      }
+
+      button {
+        width: 100%;
+      }
+
+      .xclose {
+        position: absolute;
+        top: 15px;
+        right: 14px;
+        cursor: pointer;
+      }
+
+      .modalTitle {
+        font-family: Cera Condensed Pro;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 26px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 23px;
+      }
+      .modalSubtitle{
+        font-family: TT Norms;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 14px;
+      }
+      .inputBox{
+        .enter{
+          width: 150px;
+          &:first-child{
+            margin-right: 7px;
+          }
+        }
+      }
+      .enter{
+        width: 307px;
+        height: 40px;
+        background: #F6F6F6;
+        border: none;
+        outline: none;
+        padding: 5px 11px;
+        font-family: TT Norms;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 30px;
+        color: #000000;
+        margin-bottom: 8px;
+        &::placeholder{
+          color: #9E9E9E;
+        }
+        &:last-child{
+          margin-bottom: 10px;
+        }
+      }
+      .check{
+        position: relative;
+        width: 100%;
+        margin-bottom: 8px;
+        &:last-child{
+          margin-bottom: 17px;
+        }
+        .custom_checkbox {
+          position: absolute;
+          z-index: -1;
+          opacity: 0;
+        }
+        .custom_checkbox+label {
+          display: inline-flex;
+          align-items: center;
+          user-select: none;
+        }
+        .custom_checkbox+label::before {
+          content: '';
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          flex-shrink: 0;
+          flex-grow: 0;
+          border: none;
+          border-radius: 0.25em;
+          margin-right: 0.5em;
+          background: #F7F7F7 no-repeat center center;
+          background-size: 90%;
+          margin-left: 8px;
+        }
+        .custom_checkbox:checked+label::before {
+          border: none;
+          background-color: #F7F7F7;
+          background-image: url("../../../../public/images/main/ok.svg");
+        }
+        label{
+          font-family: TT Norms;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 10px;
+          line-height: 12px;
+          color: #000000;
+          span{
+            font-family: TT Norms;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 26px;
+            color: #000000;
+          }
+        }
+      }
+      .btnModal{
+        max-width: 122px;
+        margin: 20px auto 0;
+      }
+      .counter{
+        margin: 28px auto 0;
+        width: 296px;
+        height: 14px;
+        background: #000000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        p{
+          margin: 0;
+          font-family: Cera Condensed Pro;
+          font-style: normal;
+          font-weight: 900;
+          font-size: 10px;
+          line-height: 13px;
+          text-align: center;
+          color: #FFFFFF;
+        }
+        span{
+          width: 47px;
+          height: 14px;
+          background: #E3032C;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+    .resume{
+      display: block;
+      width: 333px;
+      height: auto;
+      margin-top: 240px;
+      background: #FFFFFF;
+      box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.1);
+      border-radius: 2px;
+      position: relative;
+      padding: 46px 13px 11px 13px;
+      .xclose {
+        position: absolute;
+        top: 15px;
+        right: 14px;
+        cursor: pointer;
+      }
+      .modalTitle {
+        font-family: Cera Condensed Pro;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 26px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 23px;
+      }
+      .modalSubtitle{
+        font-family: TT Norms;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 14px;
+      }
+      textarea{
+        width: 307px;
+        height: 88px;
+        background: #F7F7F7;
+        padding: 5px 11px;
+        border: none;
+        outline: none;
+        font-family: TT Norms;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 30px;
+        color: #000000;
+        margin-bottom: 8px;
+        &::placeholder{
+          color: #9E9E9E;
+        }
+      }
+      select{
+        width: 307px;
+        height: 40px;
+        background: #F7F7F7;
+        padding: 5px 11px;
+        border: none;
+        outline: none;
+        margin-bottom: 8px;
+        option{
+          font-family: TT Norms;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 30px;
+          color: #9E9E9E;
+        }
+      }
+      .enter{
+        width: 307px;
+        height: 40px;
+        background: #F6F6F6;
+        border: none;
+        outline: none;
+        padding: 5px 11px;
+        font-family: TT Norms;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 30px;
+        color: #000000;
+        margin-bottom: 8px;
+        &::placeholder{
+          color: #9E9E9E;
+        }
+        &:last-child{
+          margin-bottom: 10px;
+        }
+      }
+      .btnModal{
+        max-width: 122px;
+        margin: 20px auto 0;
+      }
+      .counter{
+        margin: 28px auto 0;
+        width: 296px;
+        height: 14px;
+        background: #000000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        p{
+          margin: 0;
+          font-family: Cera Condensed Pro;
+          font-style: normal;
+          font-weight: 900;
+          font-size: 10px;
+          line-height: 13px;
+          text-align: center;
+          color: #FFFFFF;
+          position: relative;
+          z-index: 1;
+        }
+        span{
+          width: 84px;
+          height: 14px;
+          background: #E3032C;
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 0;
+        }
+      }
+    }
+    .description{
+      display: block;
+      width: 333px;
+      height: auto;
+      margin-top: 400px;
+      background: #FFFFFF;
+      box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.1);
+      border-radius: 2px;
+      position: relative;
+      padding: 46px 13px 11px 13px;
+      .xclose {
+        position: absolute;
+        top: 15px;
+        right: 14px;
+        cursor: pointer;
+      }
+      .modalTitle {
+        font-family: Cera Condensed Pro;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 26px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 23px;
+      }
+      .modalSubtitle{
+        font-family: TT Norms;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 14px;
+      }
+      textarea{
+        width: 307px;
+        height: 88px;
+        background: #F7F7F7;
+        padding: 5px 11px;
+        border: none;
+        outline: none;
+        font-family: TT Norms;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        color: #000000;
+        margin-bottom: 8px;
+        &::placeholder{
+          color: #9E9E9E;
+        }
+      }
+      .enter{
+        width: 307px;
+        height: 40px;
+        background: #F6F6F6;
+        border: none;
+        outline: none;
+        padding: 5px 11px;
+        font-family: TT Norms;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 30px;
+        color: #000000;
+        margin-bottom: 8px;
+        &::placeholder{
+          color: #9E9E9E;
+        }
+        &:last-child{
+          margin-bottom: 10px;
+        }
+      }
+      .btnModal{
+        max-width: 122px;
+        margin: 20px auto 0;
+      }
+      .counter{
+        margin: 28px auto 0;
+        width: 296px;
+        height: 14px;
+        background: #000000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        p{
+          margin: 0;
+          font-family: Cera Condensed Pro;
+          font-style: normal;
+          font-weight: 900;
+          font-size: 10px;
+          line-height: 13px;
+          text-align: center;
+          color: #FFFFFF;
+          position: relative;
+          z-index: 1;
+        }
+        span{
+          width: 167px;
+          height: 14px;
+          background: #E3032C;
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 0;
+        }
+      }
+    }
+    .budget{
+      display: block;
+      width: 333px;
+      height: auto;
+      margin-top: 460px;
+      background: #FFFFFF;
+      box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.1);
+      border-radius: 2px;
+      position: relative;
+      padding: 46px 13px 11px 13px;
+      .xclose {
+        position: absolute;
+        top: 15px;
+        right: 14px;
+        cursor: pointer;
+      }
+      .modalTitle {
+        font-family: Cera Condensed Pro;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 26px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 23px;
+      }
+      .modalSubtitle{
+        font-family: TT Norms;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 14px;
+      }
+      textarea{
+        width: 307px;
+        height: 328px;
+        background: #F7F7F7;
+        padding: 5px 11px;
+        border: none;
+        outline: none;
+        font-family: TT Norms;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 30px;
+        color: #000000;
+        margin-bottom: 8px;
+        &::placeholder{
+          color: #9E9E9E;
+        }
+      }
+      .btnModal{
+        max-width: 122px;
+        margin: 20px auto 0;
+      }
+      .counter{
+        margin: 28px auto 0;
+        width: 296px;
+        height: 14px;
+        background: #000000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        p{
+          margin: 0;
+          font-family: Cera Condensed Pro;
+          font-style: normal;
+          font-weight: 900;
+          font-size: 10px;
+          line-height: 13px;
+          text-align: center;
+          color: #FFFFFF;
+          position: relative;
+          z-index: 1;
+        }
+        span{
+          width: 228px;
+          height: 14px;
+          background: #E3032C;
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 0;
+        }
+      }
+    }
+    .reference{
+      display: block;
+      width: 333px;
+      height: auto;
+      margin-top: 270px;
+      background: #FFFFFF;
+      box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.1);
+      border-radius: 2px;
+      position: relative;
+      padding: 46px 13px 11px 13px;
+      .xclose {
+        position: absolute;
+        top: 15px;
+        right: 14px;
+        cursor: pointer;
+      }
+      .modalTitle {
+        font-family: Cera Condensed Pro;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 26px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 23px;
+      }
+      .modalSubtitle{
+        font-family: TT Norms;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 14px;
+      }
+      textarea{
+        width: 307px;
+        height: 88px;
+        background: #F7F7F7;
+        padding: 5px 11px;
+        border: none;
+        outline: none;
+        font-family: TT Norms;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        color: #000000;
+        margin-bottom: 8px;
+        &::placeholder{
+          color: #9E9E9E;
+        }
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+      .enter{
+        width: 307px;
+        height: 40px;
+        background: #F6F6F6;
+        border: none;
+        outline: none;
+        padding: 5px 11px;
+        font-family: TT Norms;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 30px;
+        color: #000000;
+        margin-bottom: 8px;
+        &::placeholder{
+          color: #9E9E9E;
+        }
+        &:last-child{
+          margin-bottom: 10px;
+        }
+      }
+      .contactTitle{
+        font-family: Cera Condensed Pro;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 14px;
+        line-height: 26px;
+        text-transform: uppercase;
+        color: #000000;
+      }
+      .inputBox{
+        .enter{
+          width: 150px;
+          &:first-child{
+            margin-right: 7px;
+          }
+        }
+      }
+      .upload{
+        input{
+          position: absolute;
+          z-index: 1;
+          opacity: 0;
+        }
+        .mask{
+          width: 307px;
+          height: 40px;
+          background: #F7F7F7;
+          cursor: pointer;
+          margin-bottom: 49px;
+          padding: 5px 11px;
+          display: flex;
+          align-items: baseline;
+          .minus{
+            width: 14.06px;
+            height: 2px;
+            background: #E4002B;
+            margin-right: 10px;
+          }
+          .upVideo{
+            font-family: TT Norms;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 30px;
+            text-decoration-line: underline;
+            color: #9E9E9E;
+          }
+        }
+      }
+      .btnModal{
+        max-width: 122px;
+        margin: 20px auto 0;
+      }
+      .counter{
+        margin: 28px auto 0;
+        width: 296px;
+        height: 14px;
+        background: #000000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        p{
+          margin: 0;
+          font-family: Cera Condensed Pro;
+          font-style: normal;
+          font-weight: 900;
+          font-size: 10px;
+          line-height: 13px;
+          text-align: center;
+          color: #FFFFFF;
+          position: relative;
+          z-index: 2;
+        }
+        span{
+          width: 100%;
+          height: 14px;
+          background: #E3032C;
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+@media(max-width: 900px){
+  .root{
+    max-width: 100%;
+    .filter{
+      .mainWindow{
+        margin-top: 150px;
+      }
+      .description{
+        margin-top: 370px;
+      }
+    }
+    .title{
+      font-size: 32px;
+      line-height: 34px;
+      max-width: 170px;
+      margin: 137px 0 49px 0;
+      padding-left: 24px;
+    }
+    .subtitle{
+      p{
+        font-size: 18px;
+        line-height: 20px;
+        max-width: 197px;
+        padding-left: 24px;
+        margin: 0;
+      }
+    }
+    .btnBlock{
+      padding-left: 24px;
+    }
+    .middle{
+      padding: 0;
+      button{
+        margin: 0 auto;
+      }
+    }
+    .video{
+      .videoTitle{
+        font-size: 34px;
+        line-height: 43px;
+        margin-bottom: 13px;
+        margin-top: 25px;
+      }
+      video{
+        width: 333px;
+        height: 199px;
+        margin-bottom: 55px;
+      }
+    }
+  }
+}

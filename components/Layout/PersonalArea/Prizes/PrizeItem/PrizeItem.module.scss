@@ -1,0 +1,30 @@
+.root{
+  width: 772px;
+  height: 45px;
+  background: #F6F6F6;
+  display: flex;
+  margin-bottom: 3px;
+  &:last-child{
+    margin-bottom: unset;
+  }
+  .item{
+    width: 25%;
+    font-family: TT Norms;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+    justify-content: center;
+    margin-bottom: 3px;
+  }
+}
+
+@media (max-width: 900px) {
+  .root{
+    width: 100%;
+  }
+}

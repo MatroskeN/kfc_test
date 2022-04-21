@@ -1,0 +1,115 @@
+.root{
+  width: 247px;
+  height: 184px;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  &:nth-child(3n+3){
+    margin-right: unset;
+  }
+  .filter{
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    background: rgba(118, 118, 118, 0.15);
+    backdrop-filter: blur(8px);
+    z-index: 3;
+  }
+  .filterActive{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .modal{
+      position: relative;
+      width: 333px;
+      height: 355px;
+      background: #FFFFFF;
+      box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.1);
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      svg{
+        position: absolute;
+        top: 15px;
+        right: 13px;
+        cursor: pointer;
+      }
+      .modalPic{
+        margin-top: 61px;
+        max-height: 72px;
+        margin-bottom: 39px;
+      }
+      .title{
+        font-family: Cera Condensed Pro;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 26px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 11px;
+      }
+      .subtitle{
+        font-family: TT Norms;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+        color: #000000;
+        margin-bottom: 21px;
+        max-width: 297px;
+      }
+    }
+  }
+  .mainPic{
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+  a{
+    font-family: TT Norms;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    text-decoration-line: underline;
+    color: #E4002B;
+  }
+}
+
+@media (max-width: 900px){
+  .root{
+    width: 105px;
+    height: 118px;
+    margin-right: 9px;
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    .mainPic{
+      max-width: 80px;
+      max-height: 45px;
+      margin: 0;
+    }
+    a{
+      position: absolute;
+      bottom: 9px;
+      left: 14px;
+      font-size: 14px;
+      line-height: 30px;
+    }
+  }
+}

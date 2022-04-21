@@ -1,0 +1,29 @@
+.vendor:
+  when: always
+  stage: checkout
+  image: $NODE_IMAGE
+  interruptible: true
+  script:
+    - yarn install
+  cache:
+    key:
+      prefix: npm
+      files:
+        - package-lock.json
+    paths:
+      - node_modules/
+
+vendor preview:
+  extends: .vendor
+  only:
+    refs:
+      - branches
+  except:
+    refs:
+      - tags
+
+vendor production:
+  extends: .vendor
+  only:
+    refs:
+      - tags

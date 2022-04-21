@@ -1,0 +1,38 @@
+.build:
+  stage: build
+  image: $NODE_IMAGE
+  cache:
+    key:
+      prefix: npm
+      files:
+        - package-lock.json
+    paths:
+      - node_modules/
+    policy: pull
+  before_script:
+    - echo "NEXT_PUBLIC_BASE_URL=$BASE_URL" > .env.$ENVIRONMENT
+    - echo "ENV=$ENVIRONMENT" >> .env.$ENVIRONMENT
+    - echo "NEXT_PUBLIC_RECAPTCHA_KEY=$RECAPTCHA" >> .env.$ENVIRONMENT
+    - echo "NEXT_PUBLIC_API_URL=$API_URL" >> .env.$ENVIRONMENT
+    - cat .env.$ENVIRONMENT
+  artifacts:
+    paths:
+      - ${DIST_DIR}
+
+build preview:
+  extends: .build
+  variables:
+    ENVIRONMENT: production
+    BASE_URL: $BASE_URL_DEV
+    RECAPTCHA: $RECAPTCHA_DEV
+    API_URL: $BASE_API_URL_DEV
+  script:
+    - npm run export:dev
+  only:
+    refs:
+      - branches
+  except:
+    refs:
+      - tags
+  needs:
+    - vendor preview

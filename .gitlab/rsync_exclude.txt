@@ -1,0 +1,8 @@
+.idea
+.docker
+.gitlab
+.git
+.gitlab-ci.yml
+storage
+bootstrap/cache
+tests

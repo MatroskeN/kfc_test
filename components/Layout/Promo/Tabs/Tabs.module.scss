@@ -1,0 +1,162 @@
+.root{
+  max-width: 764px;
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+  z-index: 4;
+  margin: 65px auto 20px;
+  a{
+    text-decoration: none;
+  }
+  .mainPic{
+    position: absolute;
+    bottom: 0;
+    left: 435px;
+    z-index: 2;
+  }
+  .tabItem{
+    display: flex;
+    align-items: flex-start;
+    margin-right: 11px;
+    margin-bottom: 45px;
+    width: 308px;
+    z-index: 5;
+    position: relative;
+    &:nth-child(3),&:nth-child(4){
+      cursor: pointer;
+    }
+    .anchor{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .itemPic{
+      margin-right: 11px;
+      max-width: 70px;
+    }
+    .tabItem__title{
+      font-family: TT Norms;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      color: #000000;
+      max-width: 209px;
+      .space{
+        display: none;
+      }
+      .red{
+        color: #E4002B;
+      }
+      span{
+        color: #E4002B;
+      }
+      a{
+        color:#E4002B;
+        text-decoration: underline;
+      }
+      p{
+        font-family: Cera Condensed Pro;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 26px;
+        line-height: 33px;
+        text-transform: uppercase;
+        color: #000000;
+        margin: 0;
+        display: flex;
+        align-items: flex-start;
+        br{
+          display: none;
+        }
+        span{
+          margin-left: 5px;
+          margin-right: 5px;
+        }
+        a{
+          position: relative;
+        }
+        img{
+          margin-left: 10px;
+        }
+      }
+      .tabBtn{
+        margin-top: 19px;
+        padding: 6px 45px 14px 39px;
+        background: #E4002B;
+        transform: matrix(0.97, 0, -0.28, 1, 0, 0);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 3;
+        a{
+          font-family: Cera Condensed Pro;
+          font-style: normal;
+          font-weight: 900;
+          font-size: 16px;
+          line-height: 20px;
+          text-align: center;
+          text-transform: uppercase;
+          text-decoration: none;
+          color: #FFFFFF;
+          margin: 0;
+          transform: matrix(0.97,0,0.28,1,0,0);
+        }
+        .border{
+          position: absolute;
+          top: 0;
+          left: 0;
+          border: 2px solid #000000;
+          box-sizing: border-box;
+          transform: translate(-5px, -5px);
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+  }
+}
+@media (max-width: 900px){
+  .root{
+    margin-top: auto;
+    margin-bottom: 28px;
+    flex-flow: row wrap;
+    .mainPic{
+      right: -107px;
+      top: 5px;
+      left: unset;
+      max-height: 400px;
+    }
+    .tabItem{
+      padding-left: 10px;
+      margin-right: unset;
+      width: 100%;
+      margin-bottom: 7px;
+      .tabItem__title{
+        max-width: 174px;
+        .space{
+          display: block;
+        }
+        p{
+          br{
+            display: block;
+          }
+          a{
+            &:hover{
+              &:after{
+                left: -190px;
+              }
+            }
+          }
+        }
+        .tabBtn{
+          padding: 2px 30px 10px 24px;
+        }
+      }
+    }
+  }
+}

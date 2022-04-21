@@ -1,0 +1,194 @@
+.root{
+  width: 100%;
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 139px;
+  z-index: 4;
+  .content{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    .slider{
+      max-width: 1285px;
+      width: 100%;
+      height: 450px;
+      background: #F6F6F6;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      margin: 0 auto;
+      .slide{
+        outline:none;
+      }
+      .leftArrow{
+        left: 43px;
+      }
+      .rightArrow{
+        right: 43px;
+      }
+      .arrow{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        cursor: pointer;
+      }
+    }
+    .mobNavigation{
+      display: none;
+    }
+    .links{
+      width: 100%;
+      height: 209px;
+      display: flex;
+      margin: 17px auto 68px;
+      max-width: 1285px;
+      .item{
+        width: 50%;
+        position: relative;
+        a{
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+        }
+        .itemTitle{
+          font-family: Cera Condensed Pro;
+          font-style: normal;
+          font-weight: 900;
+          font-size: 33.7072px;
+          line-height: 37px;
+          text-transform: uppercase;
+          color: #000000;
+          position: relative;
+          right: 23px;
+          text-align: left;
+          span{
+            color: #E4002B;
+          }
+          svg{
+            margin-left: 11px;
+            margin-bottom: 5px;
+          }
+        }
+        &:first-child{
+          margin-right: 11px;
+          img{
+            height: 200px;
+            position: absolute;
+            top: 0;
+            left: 17px;
+          }
+        }
+        &:last-child{
+          img{
+            height: 228px;
+            position: absolute;
+            top: -28px;
+            left: 19px;
+          }
+        }
+      }
+    }
+    .footnote{
+      margin-bottom: 10px;
+      font-family: TT Norms;
+    }
+  }
+
+}
+@media(max-width: 900px){
+  .root{
+    .content{
+      padding: 0;
+      .slider{
+        max-width: unset;
+        height: auto;
+        .mainPic{
+          display: none;
+        }
+        .mobPic{
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+        .arrow{
+          display: none;
+        }
+      }
+      .mobNavigation{
+        position: relative;
+        display: flex;
+        width: 100%;
+        height: 35px;
+        margin-bottom: 28px;
+        .mobArrow{
+          display: flex;
+          position: absolute;
+          bottom: 0px;
+        }
+        .mobLeftArrow{
+          left: 24px;
+        }
+        .mobRightArrow{
+          right: 24px;
+        }
+      }
+      .links{
+        margin: 120px auto 34px;
+        display: flex;
+        justify-content: center;
+        width: 325px;
+        .item{
+          height: 160px;
+          width: 160px;
+          &:first-child{
+            margin-right: 5px;
+            img{
+              left: 38% !important;
+            }
+          }
+          img{
+            width: 100%;
+            height: auto !important;
+            bottom: 0 !important;
+            top: unset !important;
+            right: unset !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+          }
+          .itemTitle{
+            position: absolute;
+            bottom: unset;
+            right: unset;
+            left: 0;
+            top: -100px;
+            font-size: 25.7651px;
+            line-height: 28px;
+          }
+        }
+      }
+      .footnote{
+        font-size: 10px;
+        padding-left: 24px;
+        padding-right: 24px;
+        margin-bottom: 65px;
+      }
+    }
+  }
+}
+@media(max-width: 321px){
+  .root{
+    .content{
+      .slider{
+        height: auto;
+      }
+    }
+  }
+}

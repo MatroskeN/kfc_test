@@ -1,0 +1,37 @@
+.root{
+  margin: 80px auto 81px;
+  position: relative;
+  z-index: 3;
+  max-width: 764px;
+  .title{
+    font-family: Cera Condensed Pro;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 34px;
+    line-height: 43px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+  }
+  .items{
+    display: flex;
+    margin-top: 12px;
+    align-items: center;
+    a{
+      margin-right: 54px;
+      &:last-child{
+        margin-right: unset;
+      }
+    }
+  }
+}
+@media(max-width: 900px){
+  .root{
+    margin-top: 32px;
+    .items{
+      overflow-x: scroll;
+      padding: 0 20px;
+      margin-right: 10px;
+    }
+  }
+}

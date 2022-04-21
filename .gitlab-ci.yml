@@ -1,0 +1,17 @@
+stages:
+  - checkout
+  - build
+  - deploy
+
+variables:
+  IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+  REGISTRY_SECRET: $CI_PROJECT_PATH_SLUG-$CI_COMMIT_REF_SLUG-registry
+  RELEASE_NAME: $CI_PROJECT_PATH_SLUG-$CI_COMMIT_REF_SLUG
+  NODE_IMAGE: gitlab.u2c.su:5050/u2c/build/node:14
+  DOCKER_IMAGE: gitlab.u2c.su:5050/u2c/build/docker:stable-git
+  DIST_DIR: 'out'
+
+include:
+  - local: .gitlab/pipeline/checkout.yml
+  - local: .gitlab/pipeline/build.yml
+  - local: .gitlab/pipeline/deploy.yml

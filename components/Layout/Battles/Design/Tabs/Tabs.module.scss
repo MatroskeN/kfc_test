@@ -1,0 +1,172 @@
+.root {
+  max-width: 764px;
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+  z-index: 4;
+  margin: 40px auto 43px;
+
+  .mainPic {
+    position: absolute;
+    top: -196px;
+    left: 557px;
+    z-index: 2;
+    max-width: 253px;
+  }
+
+  .tabItem {
+    display: flex;
+    align-items: flex-start;
+    margin-right: 11px;
+    margin-bottom: 45px;
+    position: relative;
+
+    .backInst {
+      position: absolute;
+      top: -21px;
+      left: 24px;
+    }
+
+    &:nth-child(3) {
+      .itemPic {
+        margin-top: -10px;
+      }
+    }
+
+    &:nth-child(4) {
+      .itemPic {
+        margin-top: 15px;
+      }
+    }
+
+    .itemPic {
+      margin-right: 11px;
+      max-width: 70px;
+      position: relative;
+    }
+
+    .backGif {
+      position: absolute;
+      top: -9px;
+      left: -34px;
+      z-index: 0;
+      max-width: 145px;
+    }
+
+    .tabItem__title {
+      font-family: TT Norms;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 19px;
+      color: #000000;
+      max-width: 209px;
+
+      span {
+        color: #E4002B;
+      }
+
+      a {
+        color: #E4002B;
+        text-decoration: underline;
+      }
+
+      p {
+        font-family: Cera Condensed Pro;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 26px;
+        line-height: 33px;
+        text-transform: uppercase;
+        color: #000000;
+        margin: 0;
+        display: flex;
+        align-items: center;
+
+        span {
+          margin-left: 5px;
+          margin-right: 5px;
+        }
+
+        a {
+          position: relative;
+
+          &:hover::after {
+            content: attr(data-title);
+            background: #F6F6F6;
+            border: 1px dashed #000000;
+            box-sizing: border-box;
+            box-shadow: 0px 2px 23px rgba(0, 0, 0, 0.79);
+            border-radius: 20px 20px 0px 20px;
+            position: absolute;
+            top: -100px;
+            left: -230px;
+            text-transform: none;
+            font-family: TT Norms;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 18px;
+            color: #000000;
+            padding: 14px 10px;
+          }
+        }
+
+        img {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .root {
+    margin-top: 64px;
+    margin-bottom: 0;
+
+    .mainPic {
+      right: 30px;
+      top: -276px;
+      left: unset;
+      max-height: 313px;
+    }
+
+    .tabItem {
+      padding-left: 23px;
+      margin-right: unset;
+      width: 100%;
+      margin-bottom: 18px;
+
+      .backGif {
+        top: -19px;
+        left: -14px;
+      }
+
+      .backInst {
+        left: 44px;
+      }
+
+      &:nth-child(2) {
+        order: 0;
+        padding-left: 38px;
+
+        .itemPic {
+          margin-left: -15px;
+        }
+      }
+      &:nth-child(3){
+        order: 2;
+        z-index: 1;
+        margin-bottom: 5px;
+      }
+      &:nth-child(4){
+        order: 1;
+        z-index: 0;
+      }
+      &:nth-child(5){
+        order: 3;
+      }
+    }
+  }
+}
